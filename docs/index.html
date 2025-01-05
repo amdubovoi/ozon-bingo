@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>OZON671GAMES3-бинго</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>OZON671GAMES3-бинго</h1>
+
+        <div class="buttons">
+            <button class="btn btn-edit" id="edit-btn">Редактировать</button>
+            <button class="btn btn-reset" id="reset-btn">Очистить выбранное</button>
+            <button class="btn btn-default" id="default-btn">Загрузить стандартное поле</button>
+        </div>
+
+        <div id="bingo-grid" class="bingo-grid"></div>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <h2>Список карточек</h2>
+            <textarea id="edit-textarea" rows="8"></textarea>
+            <div class="modal-buttons">
+                <button class="btn btn-cancel" id="cancel-btn">Отмена</button>
+                <button class="btn btn-save" id="save-btn">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
