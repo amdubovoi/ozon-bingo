@@ -1,3 +1,33 @@
+const themeSwitch = document.getElementById("theme-switch");
+const themeIcon = document.getElementById("theme-icon");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+function loadTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    const isDark = savedTheme === "dark" || (savedTheme === null && prefersDarkScheme.matches);
+
+    if (isDark) {
+        document.body.classList.add("dark");
+        themeIcon.classList.replace("fa-sun", "fa-moon");
+    } else {
+        document.body.classList.remove("dark");
+        themeIcon.classList.replace("fa-moon", "fa-sun");
+    }
+}
+
+function saveTheme(isDark) {
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+}
+
+themeSwitch.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark");
+    themeIcon.classList.toggle("fa-moon", isDark);
+    themeIcon.classList.toggle("fa-sun", !isDark);
+    saveTheme(isDark);
+});
+
+loadTheme();
+
 const defaultList = [
     "\"Что за бред?\"",
     "Невероятный саунд-дизайн",

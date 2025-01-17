@@ -10,6 +10,11 @@ body {
     color: #333;
 }
 
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -92,7 +97,7 @@ h1 {
     padding: 16px;
     text-align: center;
     user-select: none;
-    transition: background 0.3s, border-color 0.3s;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
     min-height: 100px;
     display: flex;
     align-items: center;
@@ -104,6 +109,18 @@ h1 {
 .card.selected {
     background: #c6f8c6;
     border-color: #4caf50;
+}
+
+body.dark .card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    color: #ffffff;
+}
+
+body.dark .card.selected {
+    background: #228b22;
+    border-color: #2e8b57;
+    color: #ffffff;
 }
 
 @media (max-width: 600px) {
@@ -143,7 +160,6 @@ h1 {
     font-size: 14px;
     padding: 8px;
     margin-bottom: 10px;
-
     resize: vertical;
     min-height: 200px;
     max-height: 400px;
@@ -158,4 +174,34 @@ h1 {
 
 .modal-overlay.show {
     display: flex;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+#theme-switch {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: inherit;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#theme-switch:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark #theme-switch:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
